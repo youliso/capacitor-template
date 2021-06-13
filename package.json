@@ -1,0 +1,42 @@
+{
+  "name": "vue3-webpack",
+  "productName": "vue3-webpack",
+  "version": "0.0.2",
+  "description": "vue3-webpack template",
+  "main": "dist/main.bundle.js",
+  "author": {
+    "name": "youliso",
+    "email": "youliso@Hotmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "node build/dev.js",
+    "build": "node build/build.js",
+    "test": "jest -c build/jest.json"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@vue/compiler-sfc": "^3.1.1",
+    "css-loader": "^5.2.1",
+    "esbuild-loader": "^2.11.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
+    "less": "^4.1.1",
+    "less-loader": "^9.0.0",
+    "mini-css-extract-plugin": "^1.4.1",
+    "prettier": "^2.3.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^12.0.0",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.2",
+    "vue": "^3.1.1",
+    "vue-loader": "^16.2.0",
+    "vue-router": "^4.0.8",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.1.2"
+  }
+}
