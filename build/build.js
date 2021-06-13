@@ -1,7 +1,7 @@
 const fs = require("fs");
 const webpack = require("webpack");
 const path = require('path');
-const main = require('./webpack.config');
+const main = require('../webpack.config');
 
 function deleteFolderRecursive(url) {
     let files = [];

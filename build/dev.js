@@ -10,7 +10,7 @@ async function start() {
   } catch (e) {
     throw 'not found .port';
   }
-  const config = require('./webpack.config')('development');
+  const config = require('../webpack.config')('development');
   const options = {
     contentBase: path.resolve('dist'),
     hot: true,

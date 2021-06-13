@@ -1,5 +1,5 @@
 const path = require('path');
-const { name } = require('../package.json');
+const { name } = require('./package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
