@@ -10,38 +10,33 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "node build/dev.js",
-    "build": "node build/build.js",
-    "test": "jest -c build/jest.json",
-    "sync": "npx cap sync"
+    "dev": "node build/script/dev.js",
+    "build": "node build/script/build.js",
+    "test": "jest -c build/cfg/jest.json",
+    "add:android": "npx cap add android",
+    "sync": "node build/script/build.js && npx cap sync"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "@vue/compiler-sfc": "^3.1.1",
-    "css-loader": "^5.2.1",
+    "@capacitor/cli": "^3.2.2",
+    "@types/jest": "^27.0.1",
+    "css-loader": "^6.2.0",
     "esbuild-loader": "^2.11.0",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
-    "less": "^4.1.1",
-    "less-loader": "^9.0.0",
-    "mini-css-extract-plugin": "^1.4.1",
+    "mini-css-extract-plugin": "^2.3.0",
     "prettier": "^2.3.1",
     "sass": "^1.32.8",
     "sass-loader": "^12.0.0",
+    "style-loader": "^3.2.1",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.2",
-    "vue": "^3.1.1",
-    "vue-loader": "^16.2.0",
-    "vue-router": "^4.0.8",
     "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^4.2.1"
   },
   "dependencies": {
-    "@capacitor/android": "^3.0.1",
-    "@capacitor/cli": "^3.0.1",
-    "@capacitor/core": "^3.0.1",
-    "@capacitor/status-bar": "^1.0.1",
+    "@capacitor/android": "^3.2.2",
+    "@capacitor/core": "^3.2.2",
+    "@capacitor/status-bar": "^1.0.3",
     "socket.io-client": "^4.1.2"
   }
 }

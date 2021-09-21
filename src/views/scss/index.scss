@@ -1,30 +1,39 @@
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-*::-webkit-scrollbar { /*滚动条整体样式*/
-  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 8px; /*高宽分别对应横竖滚动条的尺寸*/
   height: 1px;
 }
 
-*::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
   /*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*/
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.3);
 }
 
-*::-webkit-scrollbar-track { /*滚动条里面轨道*/
+*::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
   /*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0);*/
   background: transparent;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+  background-color: transparent;
+  position: relative;
+  user-select: none;
 }
 
 .bg-img {
@@ -33,16 +42,21 @@ html, body {
   background-position: center;
 }
 
-.cursor-pointer {
-  cursor: pointer;
+.drag {
+  -webkit-app-region: drag;
 }
 
-#app {
-  width: 100%;
-  height: 100%;
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.user-select-text {
+  user-select: text;
 }
 
 .container {
   width: 100%;
   height: 100%;
+  background-color: transparent;
 }
+

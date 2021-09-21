@@ -1,13 +1,11 @@
-import { createApp } from 'vue';
+import Router from '@/router';
 import { Style } from '@capacitor/status-bar';
-import { setOverlay, setStyle } from '@/lib/status_bar';
-import App from './App.vue';
-import router from './router';
+import { setOverlay, setStyle } from '@/utils/status_bar';
+import '@/views/scss/color.scss';
+import '@/views/scss/index.scss';
 
 (async () => {
   await setOverlay({ overlay: true });
   await setStyle({ style: Style.Light });
-  createApp(App)
-    .use(router)
-    .mount('#app');
+  Router.init();
 })();
