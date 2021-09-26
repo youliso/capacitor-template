@@ -38,7 +38,7 @@ export default class Home extends View {
 
   render() {
     const el = domCreateElement('div', 'info');
-    const about = domCreateElement('button', 'but', '关于');
+    const about = domCreateElement('button', 'but', '关于阿💟💢✝☯🛐');
     about.addEventListener('click', () => {
       Router.push('/about');
     });

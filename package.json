@@ -1,8 +1,8 @@
 {
-  "name": "capacitor-vue3",
-  "productName": "capacitor-vue3",
+  "name": "capacitor-web",
+  "productName": "capacitor-web",
   "version": "0.0.2",
-  "description": "capacitor-vue3 template",
+  "description": "capacitor-web template",
   "main": "dist/main.bundle.js",
   "author": {
     "name": "youliso",
@@ -17,25 +17,25 @@
     "sync": "node build/script/build.js && npx cap sync"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.2.2",
+    "@capacitor/cli": "^3.2.3",
     "@types/jest": "^27.0.1",
     "css-loader": "^6.2.0",
     "esbuild-loader": "^2.11.0",
     "html-webpack-plugin": "^5.3.1",
-    "jest": "^27.0.4",
+    "jest": "^27.2.2",
     "mini-css-extract-plugin": "^2.3.0",
     "prettier": "^2.3.1",
-    "sass": "^1.32.8",
+    "sass": "^1.42.1",
     "sass-loader": "^12.0.0",
-    "style-loader": "^3.2.1",
+    "style-loader": "^3.3.0",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.2",
-    "webpack": "^5.38.1",
-    "webpack-dev-server": "^4.2.1"
+    "webpack": "^5.54.0",
+    "webpack-dev-server": "^4.3.0"
   },
   "dependencies": {
-    "@capacitor/android": "^3.2.2",
-    "@capacitor/core": "^3.2.2",
+    "@capacitor/android": "^3.2.3",
+    "@capacitor/core": "^3.2.3",
     "@capacitor/status-bar": "^1.0.3",
     "socket.io-client": "^4.1.2"
   }

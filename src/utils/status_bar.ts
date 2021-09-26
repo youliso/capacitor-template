@@ -11,3 +11,11 @@ export async function setOverlay(overlays: SetOverlaysWebViewOptions) {
 export async function setStyle(styles: StyleOptions) {
   await StatusBar.setStyle(styles);
 }
+
+export async function hide() {
+  await StatusBar.hide();
+}
+
+export async function show() {
+  await StatusBar.show();
+}
