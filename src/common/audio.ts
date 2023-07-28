@@ -1,18 +1,7 @@
-function pathToSrc(path: string) {
-  try {
-    if (!path.startsWith('http://') && !path.startsWith('https://')) {
-      return `file:///${path.split('\\').join('/')}`;
-    }
-    return path;
-  } catch (e) {
-    return null;
-  }
-}
-
 class Audios {
   public static instance: Audios;
   // 当前播放源
-  public src: string = null;
+  public src: string | undefined;
   // 播放状态 1播放 0 暂停
   public type: 0 | 1 = 0;
   // 播放位置
@@ -28,15 +17,19 @@ class Audios {
   // 音量渐进时间(秒)
   public volumeGradualTime: number = 0.7;
   // 音频的数据(可视化)
-  public analyser: AnalyserNode = null;
+  public analyser: AnalyserNode;
+  // 监听音频状态更新
+  private audioUpdate = new Event('audio-update');
+  // 监听音频时间更新
+  private audioTimeUpdate = new Event('audio-time-update');
   // 音频Context
   private AudioContext: AudioContext = new AudioContext();
   // 当前播放
   private currentAudio: HTMLAudioElement = new Audio();
   // 音频源
-  private sourceAudio: MediaElementAudioSourceNode = null;
+  private sourceAudio: MediaElementAudioSourceNode;
   // 控制节点
-  private gainNode: GainNode = null;
+  private gainNode: GainNode;
 
   static getInstance() {
     if (!Audios.instance) Audios.instance = new Audios();
@@ -86,21 +79,25 @@ class Audios {
         this.AudioContext.currentTime + this.volumeGradualTime
       ); //音量淡入
       this.type = 1;
+      dispatchEvent(this.audioUpdate);
     };
 
     this.currentAudio.ontimeupdate = () => {
       //更新播放位置
       this.ingTime = this.currentAudio.currentTime;
+      dispatchEvent(this.audioTimeUpdate);
     };
 
     this.currentAudio.onpause = () => {
       //播放暂停
       this.type = 0;
+      dispatchEvent(this.audioUpdate);
     };
 
     this.currentAudio.onended = () => {
       //播放完毕
       this.clear();
+      dispatchEvent(this.audioUpdate);
     };
   }
 
@@ -110,14 +107,13 @@ class Audios {
     this.allTime = 0;
   }
 
-  async play(path?: string) {
-    if (path) {
-      const src = pathToSrc(path);
+  async play(src?: string) {
+    if (src) {
       this.currentAudio.src = src;
       this.src = src;
       return;
     }
-    if (!path && !this.currentAudio.src && this.src) {
+    if (!src && !this.currentAudio.src && this.src) {
       this.currentAudio.src = this.src;
       return;
     }
@@ -138,8 +134,8 @@ class Audios {
     });
   }
 
-  setSrc(path: string) {
-    this.src = pathToSrc(path);
+  async setSrc(src: string) {
+    this.src = src;
   }
 
   clearSrc() {
