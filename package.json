@@ -10,7 +10,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "update:android": "vite build && npx cap update android",
     "ionic:build": "vite build",
     "ionic:serve": "vite"
   },
