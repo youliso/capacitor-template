@@ -18,6 +18,9 @@ export default defineConfig({
     jsxFactory: 'h',
     jsxFragment: 'f'
   },
+  build: {
+    outDir: resolve('./dist')
+  },
   resolve: {
     alias: {
       '@': srcPath
