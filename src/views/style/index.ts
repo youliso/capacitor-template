@@ -28,30 +28,6 @@ injectGlobal`
     box-sizing: border-box;
   }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background: var(--dark);
-      color: var(--white);
-    }
-
-    input, select, button {
-      background: var(--black);
-      color: var(--white);
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    body {
-      background: var(--white);
-      color: var(--dark);
-    }
-
-    input, select, button {
-      background: var(--ghostWhite);
-      color: var(--black);
-    }
-  }
-
   html,
   body,
   #root,
